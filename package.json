@@ -1,0 +1,38 @@
+{
+  "name": "memz",
+  "version": "0.1.0",
+  "description": "Library to simulate memz-line virus in a browser",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --fix",
+    "build": "browserify -s Memz src/index.js | uglifyjs > dist/memz.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkwalExe/memz.js.git"
+  },
+  "keywords": [
+    "fun",
+    "js",
+    "virus",
+    "malware",
+    "lib",
+    "jslib",
+    "memz"
+  ],
+  "author": "Léopold Koprivnik Ibghy, @SkwalExe <skwal.net@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SkwalExe/memz.js/issues"
+  },
+  "homepage": "https://github.com/SkwalExe/memz.js#readme",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "eslint": "^8.15.0",
+    "uglify-js": "^3.15.4"
+  },
+  "dependencies": {
+    "windowsmessagebox": "^0.3.0"
+  }
+}

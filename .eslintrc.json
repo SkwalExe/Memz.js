@@ -1,0 +1,85 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ignoreComments": true
+      }
+    ],
+    "eol-last": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "prefer-arrow-callback": "error",
+    "func-style": [
+      "error",
+      "expression"
+    ],
+    "no-trailing-spaces": "error",
+    "no-multiple-empty-lines": "error",
+    "camelcase": "error",
+    "capitalized-comments": "error",
+    "default-case-last": "error",
+    "eqeqeq": "error",
+    "multiline-comment-style": [
+      "error",
+      "starred-block"
+    ],
+    "no-var": "error",
+    "yoda": "error",
+    "array-bracket-newline": [
+      "error",
+      "consistent"
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "always",
+      {
+        "singleValue": false
+      }
+    ],
+    "array-element-newline": [
+      "error",
+      "consistent"
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "spaced-comment": [
+      "error",
+      "always"
+    ]
+  }
+}

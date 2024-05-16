@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            user-select: none;
+            background: url(/assets/bg.svg) no-repeat center center fixed #1c1c1c;
+        }
+        #buttons {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            flex-wrap: wrap;
+            margin: 20px;
+            justify-content: center;
+        }
+        .button { 
+            background-color: rgba(128 128 128 / .3);
+            backdrop-filter: blur(10px);
+            padding: 10px 25px;
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="dist/memz.umd.js"></script>
+    <script>
+        const mmz = new Memz("/src/assets")
+    </script>
+
+    <div id="buttons">
+       <div class="button" onclick="mmz.changeCursor()">
+            Memz.changeCursor() 
+       </div> 
+       <div class="button" onclick="mmz.computerSounds()">
+            Memz.computerSounds() 
+       </div> 
+       <div class="button" onclick="mmz.floatingIcons()">
+            Memz.floatingIcons() 
+       </div> 
+       <div class="button" onclick="mmz.messageBoxes()">
+            Memz.messageBoxes() 
+       </div> 
+       <div class="button" onclick="mmz.invertColors()">
+            Memz.invertColors() 
+       </div> 
+       <div class="button" onclick="mmz.rotateScreen()">
+            Memz.rotateScreen() 
+       </div> 
+    </div>
+</body>
+
+</html>

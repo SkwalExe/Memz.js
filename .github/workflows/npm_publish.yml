@@ -8,17 +8,17 @@ on:
     paths:
         - 'package.json'
         - 'package-lock.json'
-        - '**.js'
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - run: npm install
-      - uses: JS-DevTools/npm-publish@v1
+          node-version: 20
+      - run: npm install --include=dev
+      - run: npm run build
+      - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}

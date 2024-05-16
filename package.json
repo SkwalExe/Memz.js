@@ -1,38 +1,67 @@
 {
-  "name": "memz",
-  "version": "0.1.0",
-  "description": "Library to simulate memz-line virus in a browser",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src --fix",
-    "build": "browserify -s Memz src/index.js | uglifyjs > dist/memz.min.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SkwalExe/memz.js.git"
-  },
-  "keywords": [
-    "fun",
-    "js",
-    "virus",
-    "malware",
-    "lib",
-    "jslib",
-    "memz"
-  ],
-  "author": "Léopold Koprivnik Ibghy, @SkwalExe <skwal.net@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SkwalExe/memz.js/issues"
-  },
-  "homepage": "https://github.com/SkwalExe/memz.js#readme",
-  "devDependencies": {
-    "browserify": "^17.0.0",
-    "eslint": "^8.15.0",
-    "uglify-js": "^3.15.4"
-  },
-  "dependencies": {
-    "windowsmessagebox": "^0.3.0"
-  }
+    "name": "@skwalexe/memz",
+    "version": "0.1.0",
+    "description": "👾 A library to simulate a troll computer virus inside a website",
+    "main": "./dist/lib-cjs/main.js",
+    "module": "./dist/lib-esm/main.js",
+    "files": [
+        "/dist/**/*.js",
+        "/dist/**/*.d.ts",
+        "/dist/**/*.js.map"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "private": false,
+    "exports": {
+        "import": "./dist/lib-esm/main.js",
+        "require": "./dist/lib-cjs/main.js"
+    },
+    "jsdelivr": "./dist/memz.umd.js",
+    "devDependencies": {
+        "@babel/cli": "^7.24.5",
+        "@babel/core": "^7.24.5",
+        "@babel/preset-env": "^7.24.5",
+        "@babel/preset-typescript": "^7.24.1",
+        "@eslint/js": "^9.2.0",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-typescript": "^11.1.6",
+        "concurrently": "^8.2.2",
+        "eslint": "^8.57.0",
+        "prettier": "^3.2.5",
+        "rollup": "^4.17.2",
+        "rollup-plugin-livereload": "^2.0.5",
+        "rollup-plugin-serve": "^1.1.1",
+        "shx": "^0.3.4",
+        "tslib": "^2.6.2",
+        "typescript": "^5.4.5",
+        "typescript-eslint": "^7.8.0"
+    },
+    "scripts": {
+        "lint": "eslint --fix **/*.ts",
+        "format": "prettier ./src/**/*.ts --config prettier.config.mjs --write",
+        "clean": "shx rm -rf ./dist",
+        "build:cjs": "tsc -m commonjs --target es2017 --outDir ./dist/lib-cjs/",
+        "build:esm": "tsc -m es6 --target es2017 --outDir ./dist/lib-esm/",
+        "build:umd": "rollup -c",
+        "watch-esm": "npm run build:esm -- --watch",
+        "watch-umd": "npm run build:umd -- --watch --plugin rollup-plugin-serve --plugin rollup-plugin-livereload",
+        "serve": "npm run build:esm && concurrently 'npm:watch-esm' 'npm:watch-umd'",
+        "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:umd"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SkwalExe/Memz.js.git"
+    },
+    "author": "Léopold Koprivnik, @SkwalExe <skwal@etik.com>",
+    "license": "GPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/SkwalExe/Memz.js/issues"
+    },
+    "homepage": "https://github.com/SkwalExe/Memz.js#readme",
+    "dependencies": {
+        "@skwalexe/winmb": "^0.1.2"
+    }
 }

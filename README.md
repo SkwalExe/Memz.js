@@ -214,7 +214,7 @@ git checkout -b my-new-feature
 - When you finished your changes, you must check your code's formatting and linting and fix all the errors.
 
 ```bash
-npm run lint
+npm run lint-fix
 npm run format
 ```
 

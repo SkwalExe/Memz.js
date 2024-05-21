@@ -11,4 +11,4 @@ export const playSound = (path: string) => {
     audio.play()
 }
 
-export const random = (list: any[]) => list[Math.floor(Math.random() * list.length)]
+export const random = (list: unknown[]) => list[Math.floor(Math.random() * list.length)]

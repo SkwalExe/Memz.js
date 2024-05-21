@@ -1,6 +1,6 @@
 import WinMB from '@skwalexe/winmb'
-import { MessageBoxes, cursors } from './data'
-import { getRandomInt, playSound, random } from './utils'
+import {MessageBoxes, cursors} from './data'
+import {getRandomInt, playSound, random} from './utils'
 
 const soundCount = 6
 const winmbAssetsUrl = 'https://cdn.jsdelivr.net/gh/SkwalExe/WinMB.js@0.1.2/src/assets/'
@@ -65,7 +65,7 @@ export default class Memz {
                 const type = random(['warning', 'error', 'info'])
                 const message = random(MessageBoxes)
 
-                this.w.show('MEMZ', message, type, [{ text: 'OK', value: true }], 'random')
+                this.w.show('MEMZ', message, type, [{text: 'OK', value: true}], 'random')
             }
         }, 1000)
     }
@@ -85,9 +85,12 @@ export default class Memz {
             if (getRandomInt(0, 15) === 0) {
                 document.documentElement.style.transform = 'rotate(180deg)'
 
-                setTimeout(() => {
-                    document.documentElement.style.transform = 'rotate(0deg)'
-                }, getRandomInt(200, 3000))
+                setTimeout(
+                    () => {
+                        document.documentElement.style.transform = 'rotate(0deg)'
+                    },
+                    getRandomInt(200, 3000)
+                )
             }
         }, 200)
     }
@@ -100,4 +103,3 @@ export default class Memz {
         this.computerSounds()
     }
 }
-

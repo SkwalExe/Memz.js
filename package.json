@@ -40,7 +40,8 @@
         "typescript-eslint": "^7.8.0"
     },
     "scripts": {
-        "lint": "eslint --fix **/*.ts",
+        "lint": "eslint **/*.ts",
+        "lint-fix": "eslint --fix **/*.ts",
         "format": "prettier ./src/**/*.ts --config prettier.config.mjs --write",
         "clean": "shx rm -rf ./dist",
         "build:cjs": "tsc -m commonjs --target es2017 --outDir ./dist/lib-cjs/",

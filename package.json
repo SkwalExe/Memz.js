@@ -43,6 +43,7 @@
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "format": "prettier ./src/**/*.ts --config prettier.config.mjs --write",
+        "check-types": "tsc --noEmit",
         "clean": "shx rm -rf ./dist",
         "build:cjs": "tsc -m commonjs --target es2017 --outDir ./dist/lib-cjs/",
         "build:esm": "tsc -m es6 --target es2017 --outDir ./dist/lib-esm/",

@@ -214,8 +214,9 @@ git checkout -b my-new-feature
 - When you finished your changes, you must check your code's formatting and linting and fix all the errors.
 
 ```bash
-npm run lint:fix
-npm run format
+npm run lint:fix # check for linting errors
+npm run check-types # check for type errors
+npm run format # comply with formatting rules
 ```
 
 - After that, add your changes to `CHANGELOG.md` and update the README if needed.

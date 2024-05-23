@@ -11,4 +11,7 @@ export const playSound = (path: string) => {
     audio.play()
 }
 
-export const random = (list: unknown[]) => list[Math.floor(Math.random() * list.length)]
+export const random = <T>(list: T[]): T => {
+    if (list.length === 0) throw new Error('random() got an empty array')
+    return list[Math.floor(Math.random() * list.length)]!
+}

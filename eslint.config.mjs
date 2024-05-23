@@ -1,15 +1,16 @@
-import eslint from '@eslint/js'
-import tseslint from 'typescript-eslint'
+import ts from 'typescript-eslint'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
-export default tseslint.config(
-    eslint.configs.recommended,
-    ...tseslint.configs.recommended,
+export default ts.config(
+    ...ts.configs.recommended,
+    eslintConfigPrettier,
+    // If ignores is used without any other keys in the configuration object, then the patterns act as global ignores.
+    // ref: https://eslint.org/docs/latest/use/configure/configuration-files#globally-ignoring-files-with-ignores
     {
-        files: ['**/*.ts', 'eslint.config.mjs'],
+        ignores: ['dist/**/*']
+    },
+    {
         rules: {
-            'indent': 'off', // conflicts with prettier
-            'eol-last': 'error',
-            'quotes': 'off', // conflicts
             'prefer-arrow-callback': 'error',
             'func-style': ['error', 'expression'],
             'no-trailing-spaces': 'error',
@@ -22,11 +23,10 @@ export default tseslint.config(
             'array-bracket-spacing': 'off',
             'array-element-newline': ['error', 'consistent'],
             'arrow-spacing': ['error', { before: true, after: true }],
-            'comma-dangle': 'off', // conflicts
             'comma-spacing': ['error', { before: false, after: true }],
             'linebreak-style': ['error', 'unix'],
             'spaced-comment': ['error', 'always'],
-            'no-unused-vars': 'off',
-        },
-    },
+            'no-unused-vars': 'off'
+        }
+    }
 )

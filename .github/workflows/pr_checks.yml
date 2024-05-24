@@ -1,4 +1,4 @@
-name: Check linting
+name: Check for typing or linting errors
 
 on:
   pull_request:

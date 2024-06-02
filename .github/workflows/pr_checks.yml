@@ -15,11 +15,16 @@ jobs:
           ref: ${{ github.head_ref }}
           # This is important to fetch the changes to the previous commit
           fetch-depth: 0
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
+      - run: pnpm install
       - name: Check linting
-        run: npm run lint
+        run: pnpm run lint
       - name: Check types
-        run: npm run check-types
+        run: pnpm run check-types
+

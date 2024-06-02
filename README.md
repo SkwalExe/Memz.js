@@ -147,7 +147,14 @@ This is a simple library that can create Windows message boxes on a web page. It
 - Rollup for UMD bundle generation.
 - ESLint for linting.
 - Prettier.js for formatting.
-- [WinMB.js](https://github.com/SkwalExe/WinMB.js) for Windowsl-like message boxes
+- [WinMB.js](https://github.com/SkwalExe/WinMB.js) for Windows-like message boxes
+
+
+This library uses `pnpm` as a package manager. You can install it with:
+
+```bash
+sudo npm install -g pnpm
+```
 
 ## Setting up the development environment 🖥️
 
@@ -162,14 +169,14 @@ cd ./Memz.js
 - Install devDependencies
 
 ```bash
-npm install --include=dev
+pnpm install
 ```
 
-- Run the npm `serve` script to start a local development server on port `10001`
+- Run the `serve` script to start a local development server on port `10001`
     - This will continuously rebuild the UMD bundle and reload the page.
 
 ```bash
-npm run serve
+pnpm run serve
 ```
 
 - Open the local development server on `https://localhost:10001/` and open the project in your IDE.
@@ -214,14 +221,14 @@ git checkout -b my-new-feature
 - When you finished your changes, you must check your code's formatting and linting and fix all the errors.
 
 ```bash
-npm run lint:fix # check for linting errors
-npm run check-types # check for type errors
-npm run format # comply with formatting rules
+pnpm run lint:fix # check for linting errors
+pnpm run check-types # check for type errors
+pnpm run format # comply with formatting rules
 ```
 
 - After that, add your changes to `CHANGELOG.md` and update the README if needed.
 
-- Do not increment the NPM package version yourself, the maintainer will do it.
+- Do not increment the module version yourself, the maintainer will do it.
 
 - Then, you can commit your work and push to your fork.
 
@@ -233,7 +240,7 @@ git push -u origin my-new-feature
 
 - Finally, you can create your pull request from your fork repo's github page.
 
-## NPM scripts
+## PNPM scripts
 
 - `lint`: Perform ESLint checks.
 - `format`: Format codebase with prettier.
